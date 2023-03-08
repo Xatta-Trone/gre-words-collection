@@ -8,6 +8,8 @@ import (
 	"os"
 	"sort"
 	"strconv"
+	"strings"
+	"unicode"
 )
 
 const COMBINED_FILE_NAME = "combined.csv"
@@ -37,6 +39,7 @@ func main() {
 	// then filter the words by looking up into to word key function
 	wordKeys := make(map[string]bool)
 	combinedList := [][]string{}
+	totalUniqueWords := 0
 
 	for _, fileName := range filenames {
 
@@ -56,6 +59,7 @@ func main() {
 
 		fmt.Println(fileName+"has "+strconv.Itoa(total)+" words; among them ", strconv.Itoa(uniqueWords)+" unique words found")
 		fmt.Println("==========================================================================================================")
+		totalUniqueWords = totalUniqueWords + uniqueWords
 
 	}
 
@@ -81,7 +85,7 @@ func main() {
 	}
 
 	// fmt.Println(combinedList)
-	fmt.Println("File written successfully. Please see the file named ", COMBINED_FILE_NAME, "in the ", WORDS_FOLDER_NAME, "folder to see the combined list.")
+	fmt.Println("File written successfully. Please see the file named ", COMBINED_FILE_NAME, "in the ", WORDS_FOLDER_NAME, "folder to see the combined list. Total parsed word ", totalUniqueWords)
 
 }
 
@@ -111,7 +115,18 @@ func readCSV(filePath string) ([][]string, int) {
 		// count the number of rows
 		totalLine++
 		// add data to temp array
-		fileData = append(fileData, data)
+
+		// parse the data
+		word := strings.TrimSpace(strings.ToLower(data[0]))
+		// do some processing to remove non printable unicode character like ZERO WIDTH NO-BREAK SPACE (\uFEFF)
+		processedWord := strings.Map(func(r rune) rune {
+			if unicode.IsPrint(r) {
+				return r
+			}
+			return -1
+		}, word)
+
+		fileData = append(fileData, []string{processedWord})
 	}
 
 	return fileData, totalLine
