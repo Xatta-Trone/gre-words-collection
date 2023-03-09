@@ -10,10 +10,16 @@ import (
 	"strconv"
 	"strings"
 	"unicode"
+
+	"golang.org/x/text/runes"
+	"golang.org/x/text/transform"
+	"golang.org/x/text/unicode/norm"
 )
 
 const COMBINED_FILE_NAME = "combined.csv"
 const WORDS_FOLDER_NAME = "./word-list"
+
+var normalizer = transform.Chain(norm.NFD, runes.Remove(runes.In(unicode.Mn)), norm.NFC)
 
 func main() {
 
@@ -126,8 +132,22 @@ func readCSV(filePath string) ([][]string, int) {
 			return -1
 		}, word)
 
-		fileData = append(fileData, []string{processedWord})
+		// normalize word from accent to english word
+		processedWord, err = normalize(processedWord)
+
+		if err == nil {
+			fileData = append(fileData, []string{processedWord})
+		}
+
 	}
 
 	return fileData, totalLine
+}
+
+func normalize(str string) (string, error) {
+	s, _, err := transform.String(normalizer, str)
+	if err != nil {
+		return "", err
+	}
+	return strings.ToLower(s), err
 }
