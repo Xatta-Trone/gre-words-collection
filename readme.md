@@ -42,3 +42,5 @@ go run main.go
 7. Greenlight TestPrep: https://quizlet.com/18795939/gre-basic-flash-cards/
 8. Magoosh: https://docs.google.com/spreadsheets/d/1hI7juCF8seIMZwjD6qsUgXZpdpa3VEUVTX8Uzd-_tpI/edit#gid=0
 9. Barrons 3500: https://www.pdfdrive.com/gre-word-list-3500-e187704112.html
+
+�
