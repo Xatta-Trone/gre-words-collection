@@ -136,6 +136,10 @@ func readCSV(filePath string) ([][]string, int) {
 		processedWord, err = normalize(processedWord)
 
 		if err == nil {
+			// replace underscores and slashes
+			processedWord = strings.Replace(processedWord,"'","",-1)
+			processedWord = strings.Replace(processedWord,"\\","",-1)
+			processedWord = strings.Replace(processedWord,"_","-",-1)
 			fileData = append(fileData, []string{processedWord})
 		}
 
