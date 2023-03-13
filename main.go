@@ -133,13 +133,10 @@ func readCSV(filePath string) ([][]string, int) {
 		}, word)
 
 		// normalize word from accent to english word
-		processedWord, err = normalize(processedWord)
+		processedWord = processWord(processedWord)
 
-		if err == nil {
-			// replace underscores and slashes
-			processedWord = strings.Replace(processedWord,"'","",-1)
-			processedWord = strings.Replace(processedWord,"\\","",-1)
-			processedWord = strings.Replace(processedWord,"_","-",-1)
+		if len(processedWord) > 0 {
+
 			fileData = append(fileData, []string{processedWord})
 		}
 
@@ -148,10 +145,29 @@ func readCSV(filePath string) ([][]string, int) {
 	return fileData, totalLine
 }
 
-func normalize(str string) (string, error) {
+// func normalize(str string) (string, error) {
+// 	s, _, err := transform.String(normalizer, str)
+// 	if err != nil {
+// 		return "", err
+// 	}
+// 	return strings.ToLower(s), err
+// }
+
+func processWord(str string) string {
+
+	str = strings.TrimSpace(strings.Join(strings.Fields(str), " "))
+
 	s, _, err := transform.String(normalizer, str)
+
 	if err != nil {
-		return "", err
+		return ""
 	}
-	return strings.ToLower(s), err
+
+	str = strings.ToLower(s)
+	// replace underscores and slashes
+	processedWord := strings.Replace(str, "'", "", -1)
+	processedWord = strings.Replace(processedWord, "\\", "", -1)
+	processedWord = strings.Replace(processedWord, "_", "-", -1)
+
+	return processedWord
 }
