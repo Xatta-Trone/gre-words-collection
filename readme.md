@@ -1,4 +1,6 @@
 # GRE Words Collection [8240 Unique words]
+## The largest collection of GRE words from various sources as far as I know 
+
 
 You will find a combined list of words, curated from following word-lists [word count]:
 
