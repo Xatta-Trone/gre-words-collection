@@ -1,4 +1,4 @@
-# GRE Words Collection [5352 Unique words]
+# GRE Words Collection [8240 Unique words]
 
 You will find a combined list of words, curated from following word-lists [word count]:
 
@@ -11,6 +11,7 @@ You will find a combined list of words, curated from following word-lists [word 
 7. Greenlight TestPrep [500]
 8. Magoosh [1000]
 9. Barrons 3500 [4700]
+10. GRE Combined list of 5000 words [5000]
 
 Find a file named `combined.csv` in the `word-list` folder to get the list of total unique words from all the above sets.
 
@@ -42,5 +43,6 @@ go run main.go
 7. Greenlight TestPrep: https://quizlet.com/18795939/gre-basic-flash-cards/
 8. Magoosh: https://docs.google.com/spreadsheets/d/1hI7juCF8seIMZwjD6qsUgXZpdpa3VEUVTX8Uzd-_tpI/edit#gid=0
 9. Barrons 3500: https://www.pdfdrive.com/gre-word-list-3500-e187704112.html
+10. GRE Combined list of 5000 words: https://pdfcoffee.com/5000-gre-word-list-pdf-free.html
 
 �
