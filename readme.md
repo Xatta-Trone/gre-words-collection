@@ -1,4 +1,4 @@
-# GRE Words Collection [8240 Unique words]
+# GRE Words Collection [8614 words with some of them are similar.]
 ## The largest collection of GRE words from various sources as far as I know 
 
 
@@ -46,5 +46,6 @@ go run main.go
 8. Magoosh: https://docs.google.com/spreadsheets/d/1hI7juCF8seIMZwjD6qsUgXZpdpa3VEUVTX8Uzd-_tpI/edit#gid=0
 9. Barrons 3500: https://www.pdfdrive.com/gre-word-list-3500-e187704112.html
 10. GRE Combined list of 5000 words: https://pdfcoffee.com/5000-gre-word-list-pdf-free.html
+11. 5000 GRE words: https://www.vocabulary.com/lists/128536
 
 �
