@@ -14,6 +14,8 @@ You will find a combined list of words, curated from following word-lists [word 
 8. Magoosh [1000]
 9. Barrons 3500 [4700]
 10. GRE Combined list of 5000 words [5000]
+11. 5000 GRE words [5000]
+12. The Vocabulary.com Top 1000 [1000]
 
 Find a file named `combined.csv` in the `word-list` folder to get the list of total unique words from all the above sets.
 
@@ -47,5 +49,5 @@ go run main.go
 9. Barrons 3500: https://www.pdfdrive.com/gre-word-list-3500-e187704112.html
 10. GRE Combined list of 5000 words: https://pdfcoffee.com/5000-gre-word-list-pdf-free.html
 11. 5000 GRE words: https://www.vocabulary.com/lists/128536
-
+12. The Vocabulary.com Top 1000: https://www.vocabulary.com/lists/52473
 �
