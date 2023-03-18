@@ -133,11 +133,13 @@ func readCSV(filePath string) ([][]string, int) {
 		}, word)
 
 		// normalize word from accent to english word
-		processedWord = processWord(processedWord)
+		processedWordWithBrackets := processWord(processedWord)
 
-		if len(processedWord) > 0 {
+		if len(processedWordWithBrackets) > 0 {
+			for _, word := range processedWordWithBrackets {
+				fileData = append(fileData, []string{word})
+			}
 
-			fileData = append(fileData, []string{processedWord})
 		}
 
 	}
@@ -153,14 +155,14 @@ func readCSV(filePath string) ([][]string, int) {
 // 	return strings.ToLower(s), err
 // }
 
-func processWord(str string) string {
+func processWord(str string) []string {
 
 	str = strings.TrimSpace(strings.Join(strings.Fields(str), " "))
 
 	s, _, err := transform.String(normalizer, str)
 
 	if err != nil {
-		return ""
+		return []string{}
 	}
 
 	str = strings.ToLower(s)
@@ -169,5 +171,24 @@ func processWord(str string) string {
 	processedWord = strings.Replace(processedWord, "\\", "", -1)
 	processedWord = strings.Replace(processedWord, "_", "-", -1)
 
-	return processedWord
+	matchWords := match(processedWord)
+
+	return matchWords
+}
+
+func match(s string) []string {
+	str := []string{}
+	i := strings.Index(s, "(")
+	if i >= 0 {
+		j := strings.Index(s, ")")
+		if j >= 0 {
+			//return s[i+1 : j]
+			str = append(str, s[i+1:j])
+			str = append(str, s[:i])
+		}
+	} else {
+		str = append(str, s)
+	}
+
+	return str
 }
