@@ -1,4 +1,4 @@
-# GRE Words Collection [8614 words with some of them are similar.]
+# GRE Words Collection [8813 words with some of them are similar.]
 ## The largest collection of GRE words from various sources as far as I know 
 
 
@@ -16,6 +16,7 @@ You will find a combined list of words, curated from following word-lists [word 
 10. GRE Combined list of 5000 words [5000]
 11. 5000 GRE words [5000]
 12. The Vocabulary.com Top 1000 [1000]
+13. Manhattan Prep 1000 GRE Words [1000]
 
 Find a file named `combined.csv` in the `word-list` folder to get the list of total unique words from all the above sets.
 
@@ -50,4 +51,5 @@ go run main.go
 10. GRE Combined list of 5000 words: https://pdfcoffee.com/5000-gre-word-list-pdf-free.html
 11. 5000 GRE words: https://www.vocabulary.com/lists/128536
 12. The Vocabulary.com Top 1000: https://www.vocabulary.com/lists/52473
+13. Manhattan Prep 1000 GRE Words: https://quizlet.com/755640375/manhattan-prep-1000-gre-words-definitions-flash-cards/
 �
