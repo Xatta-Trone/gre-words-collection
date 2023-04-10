@@ -1,4 +1,4 @@
-# GRE Words Collection [8813 words with some of them are similar.]
+# GRE Words Collection [9566 words with some of them are similar.]
 ## The largest collection of GRE words from various sources as far as I know 
 
 
